@@ -6,34 +6,36 @@
 
 :root.theme-light {
   /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
+    Так стили, написанные ниже, будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-
   --page-bg-image: url("../images/cover-image-light.png");
   --page-bg-color-base: #fff;
-  --font-h1-color: #ffc2e6;
-  --font-h3-color: #353430;
-  --font-h4-color: #353430;
+  --font-heading-primary-color: #ffc2e6;
+  --font-heading-secondary-color: #353430;
+  --font-heading-tertiary-color: #353430;
   --font-text-color: #353430;
   --accent-color: #ff8dcb;
   --menu-color: #353430;
   .hide-in-day {
-    display: none;
-  }
+  display: none;
 }
+}
+
+
 
 @media (prefers-color-scheme: light) {
   :root {
     --page-bg-image: url("../images/cover-image-light.png");
     --page-bg-color-base: #fff;
-    --font-h1-color: #ffc2e6;
-    --font-h3-color: #353430;
-    --font-h4-color: #353430;
+    --font-heading-primary-color: #ffc2e6;
+    --font-heading-secondary-color: #353430;
+    --font-heading-tertiary-color: #353430;
     --font-text-color: #353430;
     --accent-color: #ff8dcb;
     --menu-color: #353430;
   }
+
   .hide-in-day {
     display: none;
   }

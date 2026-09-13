@@ -1,5 +1,3 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   background-color: var(--page-bg-color-base);
   background-image: var(--page-bg-image);
@@ -21,9 +19,31 @@
   position: relative;
 }
 
+.frame-corner::before,
+.frame-corner::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--menu-color);
+  border-style: solid;
+}
+
+.frame-corner::before {
+  border-width: 0 0 2px 2px;
+  bottom: 10px;
+  left: 1px;
+}
+
+.frame-corner::after {
+  border-width: 2px 2px 0 0;
+  top: 10px;
+  right: 1px;
+}
+
 .hide-in-day {
   display: inline-block;
-  color: #ff0070;
+  color: var(--accent-color);
   position: absolute;
   top: 10px;
   right: 25px;
@@ -34,33 +54,11 @@
   position: absolute;
   top: 5px;
   right: -20px;
-  background-color: #ff0070;
+  background-color: var(--accent-color);
   width: 16px;
   height: 16px;
   border-radius: 50%;
   filter: blur(4px);
-}
-
-.header::before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-left: 2px solid var(--menu-color);
-  border-bottom: 2px solid var(--menu-color);
-  bottom: 10px;
-  left: 1px;
-}
-
-.header::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-right: 2px solid var(--menu-color);
-  border-top: 2px solid var(--menu-color);
-  top: 10px;
-  right: 1px;
 }
 
 .header__theme-menu {
@@ -77,21 +75,15 @@
   cursor: pointer;
   box-sizing: border-box;
   outline: none;
-}
-
-.header__theme-menu-button_active {
-  border-color: var(--menu-color);
-  color: var(--menu-color);
+  position: relative;
 }
 
 .header__theme-menu-button:focus-visible {
-  display: block;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  border-bottom: 2px solid var(--menu-color);
 }
 
 .header__theme-menu-button:not(.header__theme-menu-button_active):hover {
-  outline: 1px solid var(--font-h3-color);
+  outline: 1px solid var(--font-heading-secondary-color);
   outline-offset: 0px;
 }
 
@@ -99,19 +91,19 @@
   justify-self: end;
   width: clamp(360px, 50vw, 100%);
   height: min-content;
-  color: var(--font-h4-color);
+  color: var(--font-heading-tertiary-color);
   font-size: initial;
 }
 
 .title-decor {
-  background-color: #ff0070;
+  background-color: var(--accent-color);
 }
 
 .title {
   align-self: center;
   font-size: var(--h1-portrait);
   line-height: 83%;
-  color: var(--font-h1-color);
+  color: var(--font-heading-primary-color);
   text-shadow: 4px 4px 0 var(--accent-color);
 }
 
@@ -128,7 +120,6 @@
   text-shadow: 2px 2px 0px var(--accent-color);
 }
 
-/* Своё подчёркивание */
 .link::after {
   content: "";
   position: absolute;
@@ -159,17 +150,17 @@
   gap: 10px;
 }
 
-.why h3.base.text__color {
+.why__title {
   grid-column: 1;
   align-self: start;
   justify-self: start;
 }
 
-.why .card {
+.why__card {
   grid-column: 2;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 }
 
 @media (max-width: 768px) {
@@ -178,8 +169,8 @@
     gap: 12px;
   }
 
-  .why h3.base.text__color,
-  .why .card {
+  .why__title,
+  .why__card {
     grid-column: auto;
     width: 100%;
   }
@@ -190,14 +181,18 @@
   margin-bottom: 30px;
 }
 
+.what__title {
+  margin-bottom: 20px;
+}
+
 .depth {
   margin-bottom: 15px;
   height: min-content;
-  color: var(--font-h4-color);
+  color: var(--font-heading-tertiary-color);
 }
 
 .text__color {
-  color: var(--font-h3-color);
+  color: var(--font-heading-secondary-color);
 }
 
 .text {
@@ -208,9 +203,8 @@
 
 .depth__advice {
   font-weight: 400;
-  color: var(--font-h4-color);
+  color: var(--font-heading-tertiary-color);
 }
-
 
 .how {
   display: grid;
@@ -218,17 +212,17 @@
   gap: 20px;
 }
 
-.base-what {
+.how__title {
   grid-column: 1;
   align-self: start;
   justify-self: start;
+  margin-bottom: 0;
 }
 
-.card__advice-full {
+.how__card {
   grid-column: 2;
   display: flex;
   flex-direction: column;
-  gap: 22px;
 }
 
 @media (max-width: 768px) {
@@ -237,14 +231,14 @@
     gap: 22px;
   }
 
-  .card__advice-full {
+  .how__card {
     grid-column: auto;
     width: 100%;
   }
 }
 
 @media (min-width: 768px) {
-  .what .base {
+  .what__title {
     width: max(230px, 23vw);
   }
 }
@@ -264,32 +258,36 @@
   gap: 20px;
 
   grid-template-areas:
-    "a a b"
-    "c d b"
-    "c e e";
+    "sunset sunset ice-cream"
+    "tape books ice-cream"
+    "tape street street";
 }
 
-.item-1 {
-  grid-area: a;
-}
-.item-2 {
-  grid-area: b;
-}
-.item-3 {
-  grid-area: c;
-}
-.item-4 {
-  grid-area: d;
-}
-.item-5 {
-  grid-area: e;
+.picture--sunset {
+  grid-area: sunset;
 }
 
-img {
+.picture--ice-cream {
+  grid-area: ice-cream;
+}
+
+.picture--tape {
+  grid-area: tape;
+}
+
+.picture--books {
+  grid-area: books;
+}
+
+.picture--street {
+  grid-area: street;
+}
+
+.pictures img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block; 
+  display: block;
 }
 
 @media (max-width: 768px) {
@@ -317,36 +315,19 @@ img {
   justify-content: center;
   align-items: center;
   position: relative;
-  
-}
-
-.footer::before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-left: 2px solid var(--menu-color);
-  border-bottom: 2px solid var(--menu-color);
-  bottom: 10px;
-  left: 1px;
-}
-
-.footer::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-right: 2px solid var(--menu-color);
-  border-top: 2px solid var(--menu-color);
-  top: 10px;
-  right: 1px;
 }
 
 .title__footer {
   font-size: var(--h1-portrait);
   line-height: 83%;
-  color: var(--font-h1-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
+  color: var(--font-heading-primary-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 @media (min-aspect-ratio: 1/1) {
@@ -361,8 +342,7 @@ img {
   }
 
   .header__theme-menu-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
+    flex-direction: row;
+    gap: 10px;
   }
 }
