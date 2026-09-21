@@ -17,12 +17,7 @@
   --font-text-color: #353430;
   --accent-color: #ff8dcb;
   --menu-color: #353430;
-  .hide-in-day {
-  display: none;
 }
-}
-
-
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -35,8 +30,8 @@
     --accent-color: #ff8dcb;
     --menu-color: #353430;
   }
+}
 
-  .hide-in-day {
-    display: none;
-  }
+:root.theme-light .hide-in-day {
+  display: none;
 }
