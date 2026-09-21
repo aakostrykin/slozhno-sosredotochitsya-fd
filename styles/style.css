@@ -135,7 +135,7 @@
   background: var(--font-text-color);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.25s ease;
+  transition: transform 0.2s ease;
   z-index: 1;
 }
 
@@ -220,7 +220,6 @@
 }
 
 .text__color {
-  font-size: 18px;
   color: var(--font-heading-secondary-color);
 }
 
