@@ -149,18 +149,18 @@
   padding: 2px;
 }
 
-.section__content {
-  margin-bottom: 80px;
+.content {
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .content {
+    margin-top: 60px;
+  }
 }
 
 .section__content:last-child {
   margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-  .section__content {
-    margin-bottom: 50px;
-  }
 }
 
 .why {
@@ -191,16 +191,6 @@
   .why__card {
     grid-column: auto;
     width: 100%;
-  }
-}
-
-.content {
-  margin-top: 40px;
-}
-
-@media (min-width: 768px) {
-  .content {
-    margin-top: 60px;
   }
 }
 
@@ -324,11 +314,6 @@
     display: block;
   }
 
-  .pictures > * {
-    display: block;
-    width: 100%;
-  }
-
   .pictures img {
     width: 100%;
     height: auto;
@@ -338,12 +323,19 @@
 }
 
 .footer {
+  margin-top: 40px;
   height: 100vh;
   min-height: 668px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    margin-top: 60px;
+  }
 }
 
 .title__footer {
