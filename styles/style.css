@@ -195,8 +195,15 @@
 }
 
 .what {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .what {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
 }
 
 .what__title {
@@ -268,6 +275,16 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
+}
+
+.img-section {
+  margin-top: 50px;
+}
+
+@media (min-width: 768px) {
+  .img-section {
+  margin-top: 80px;
+}
 }
 
 .pictures {
